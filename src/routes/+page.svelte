@@ -9,6 +9,9 @@
   let line3 = "";
   const handleInput = (e) => {
     ttp = e.target.value;
+    //remove linebreak 
+    ttp = ttp.replace(/(\r\n|\n|\r)/gm, "");
+    ttp = ttp.toUpperCase();
     line1 = ttp.slice(0, line1Length);
     line2 = ttp.slice(0 + line1Length, 0 + line1Length + line2Length);
     line3 = ttp.slice(
@@ -19,10 +22,12 @@
 </script>
 
 <div class="wrapper">
+  <div class="board">
+    <CharaterRow lineLength={line1Length} line={line1} />
+    <CharaterRow lineLength={line2Length} line={line2} />
+    <CharaterRow lineLength={line3Length} line={line3} />
+  </div>
   <textarea rows="3" cols="7" name="ttp" on:input={handleInput} />
-  <CharaterRow lineLength={line1Length} line={line1} />
-  <CharaterRow lineLength={line2Length} line={line2} />
-  <CharaterRow lineLength={line3Length} line={line3} />
 </div>
 
 <style>
@@ -31,17 +36,27 @@
     color: white;
     outline-color: white;
   }
-
+  .board{
+    flex: 1 1 75vh;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+  }
+  textarea{
+    flex: 1 1 15vh;
+    margin: 0 5vh; /* consoom 25 vh but no more*/
+    padding: 0;
+    border: none;
+    outline:2px solid white;
+  }
   .wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    max-height: 100vh;
   }
-  .wrapper {
-    flex: 1;
-  }
+
   textarea {
-    position: absolute;
-    bottom: 0;
     resize: none;
   }
 </style>

@@ -12,10 +12,7 @@
 
 </script>
 
-
-<p>{lineLength}</p>
-
-<div class="7-characters newline line">
+<div class="line">
     
     {#each Object.entries(line) as c }
         <Character char={c[1]}/>
@@ -26,10 +23,10 @@
 
     .line {
         background-color: #272727;
-    }
-
-    .newline {
         display: flex;
         flex-direction: row;
+        padding: 20px 0;
     }
+
+
 </style>

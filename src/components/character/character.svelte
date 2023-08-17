@@ -7,7 +7,10 @@
     }
 
     afterUpdate(() => {
-        if (char === "a") {
+        if (char === " ") {
+            char = "\u00A0";
+        }
+        if (char === "A ") {
             error = true;
         } else {
             error = false;
@@ -21,13 +24,14 @@
 <style>
     .character {
         display: inline-block;
-        width: 1em;
-        height: 1em;
-        border: 1px solid white;
-        margin: 0.1em;
+        width: 2em;
+        height: 2em;
+        border: none;
+        outline: 1px solid white;
         text-align: center;
-        line-height: 1em;
-        font-size: 1em;
+        line-height: 2em ;
+        font-size: 2em;
+        margin: 0 6px;
     }
     .error {
         background-color: red;
