@@ -1,5 +1,6 @@
 <script lang="ts">
   import CharaterRow from "../components/character/charater-row.svelte";
+  //disgusting conf
   let line1Length = 7;
   let line2Length = 7;
   let line3Length = 4;
@@ -7,6 +8,7 @@
   let line1 = "";
   let line2 = "";
   let line3 = "";
+
   const handleInput = (e) => {
     ttp = e.target.value;
     //remove linebreak 

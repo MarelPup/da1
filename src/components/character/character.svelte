@@ -10,7 +10,7 @@
         if (char === " ") {
             char = "\u00A0";
         }
-        if (char === "A ") {
+        if (char === "A") {
             error = true;
         } else {
             error = false;
