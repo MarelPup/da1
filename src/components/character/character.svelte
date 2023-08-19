@@ -26,12 +26,12 @@
         display: inline-block;
         width: 2em;
         height: 2em;
-        border: none;
         outline: 1px solid white;
         text-align: center;
         line-height: 2em ;
         font-size: 2em;
         margin: 0 6px;
+        z-index:1;
     }
     .error {
         background-color: red;

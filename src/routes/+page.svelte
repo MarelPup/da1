@@ -1,5 +1,6 @@
 <script lang="ts">
   import CharaterRow from "../components/character/charater-row.svelte";
+  import DizzyBg from "./dizzyBg.svelte";
   //disgusting conf
   let line1Length = 7;
   let line2Length = 7;
@@ -11,7 +12,7 @@
 
   const handleInput = (e) => {
     ttp = e.target.value;
-    //remove linebreak 
+    //remove linebreak
     ttp = ttp.replace(/(\r\n|\n|\r)/gm, "");
     ttp = ttp.toUpperCase();
     line1 = ttp.slice(0, line1Length);
@@ -25,6 +26,7 @@
 
 <div class="wrapper">
   <div class="board">
+    <DizzyBg />
     <CharaterRow lineLength={line1Length} line={line1} />
     <CharaterRow lineLength={line2Length} line={line2} />
     <CharaterRow lineLength={line3Length} line={line3} />
@@ -32,33 +34,48 @@
   <textarea rows="3" cols="7" name="ttp" on:input={handleInput} />
 </div>
 
-<style>
+<style lang="scss">
+  :global(body) {
+    margin: 0;
+    padding: 0;
+  }
   :global(body, body *) {
-    background-color: #272727;
     color: white;
     outline-color: white;
+    background-color: #272727;
   }
-  .board{
+  :global(.dizzy) {
+    position: absolute;
+    z-index: 0;
+  }
+
+  .board {
     flex: 1 1 75vh;
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: none;
   }
-  textarea{
+  textarea {
     flex: 1 1 15vh;
-    margin: 0 5vh; /* consoom 25 vh but no more*/
-    padding: 0;
+    margin: 5vh 5vh; /* consoom 25 vh but no more*/
+
     border: none;
-    outline:2px solid white;
+    //outline: 2px solid white;
+    z-index: 1;
+    
   }
   .wrapper {
     display: flex;
     flex-direction: column;
     max-height: 100vh;
+    
   }
 
   textarea {
+    border: 2px white solid;
+    font-size: 5em;
     resize: none;
   }
 </style>
