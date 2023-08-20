@@ -19,21 +19,29 @@
     
 </script>
 
-<span class="character" class:error>{char}</span>
+<span class="character graf-font" class:error>{char}</span>
 
 <style>
+    @font-face {
+    font-family: "nas";
+    src: url("../../fonts/no-added-sugar-font/NoAddedSugar-2REW.ttf");
+}
+
     .character {
         display: inline-block;
-        width: 2em;
-        height: 2em;
-        outline: 1px solid white;
+        width: 1em;
+        border: 3px solid white;
+        padding-top: 4px;
         text-align: center;
-        line-height: 2em ;
+        font-weight: bold;
         font-size: 2em;
         margin: 0 6px;
         z-index:1;
     }
+    .graf-font{
+        font-family: "nas";
+    }
     .error {
-        background-color: red;
+        background-color: rgb(255,0,0);
     }
 </style>

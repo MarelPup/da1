@@ -31,7 +31,7 @@
     <CharaterRow lineLength={line2Length} line={line2} />
     <CharaterRow lineLength={line3Length} line={line3} />
   </div>
-  <textarea rows="3" cols="7" name="ttp" on:input={handleInput} />
+  <textarea name="ttp" on:input={handleInput} />
 </div>
 
 <style lang="scss">
@@ -43,6 +43,7 @@
     color: white;
     outline-color: white;
     background-color: #272727;
+    //A80024
   }
   :global(.dizzy) {
     position: absolute;
@@ -64,6 +65,9 @@
     border: none;
     //outline: 2px solid white;
     z-index: 1;
+    border: 2px white solid;
+    font-size: 2em;
+    resize: none;
     
   }
   .wrapper {
@@ -73,9 +77,4 @@
     
   }
 
-  textarea {
-    border: 2px white solid;
-    font-size: 5em;
-    resize: none;
-  }
 </style>
